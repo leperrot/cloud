@@ -22,7 +22,6 @@ public class Bootstrapper implements ServletContextListener{
 		ObjectifyService.init();
 		ObjectifyService.register(Account.class);
 		ObjectifyService.register(Approval.class);
-		ObjectifyService.register(CheckAccount.class);
 	}
 
 }
