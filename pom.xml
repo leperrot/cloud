@@ -14,6 +14,9 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     </properties>
+    <prerequisites>
+    	<maven>3.0</maven>
+    </prerequisites>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -54,6 +57,51 @@
             <artifactId>objectify</artifactId>
             <version>6.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-server -->
+		<dependency>
+		    <groupId>org.glassfish.jersey.core</groupId>
+		    <artifactId>jersey-server</artifactId>
+		    <version>2.27</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.inject/jersey-hk2 -->
+		<dependency>
+		    <groupId>org.glassfish.jersey.inject</groupId>
+		    <artifactId>jersey-hk2</artifactId>
+		    <version>2.27</version>
+		</dependency>
+		
+        <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-common -->
+		<dependency>
+		    <groupId>org.glassfish.jersey.core</groupId>
+		    <artifactId>jersey-common</artifactId>
+		    <version>2.27</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.containers/jersey-container-servlet -->
+		<dependency>
+		    <groupId>org.glassfish.jersey.containers</groupId>
+		    <artifactId>jersey-container-servlet</artifactId>
+		    <version>2.27</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+		<dependency>
+		    <groupId>javax.xml.bind</groupId>
+		    <artifactId>jaxb-api</artifactId>
+		    <version>2.3.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+		<dependency>
+		    <groupId>javax.activation</groupId>
+		    <artifactId>activation</artifactId>
+		    <version>1.1.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20180130</version>
+		</dependency>
+		
+		
         <!-- Test Dependencies -->
         <dependency>
             <groupId>junit</groupId>
