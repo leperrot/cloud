@@ -11,6 +11,11 @@
 			<param-name>jersey.config.server.provider.packages</param-name>
 			<param-value>org.iut.cloud.services</param-value>
 		</init-param>
+		
+		<init-param>
+		  <param-name>jersey.config.server.provider.classnames</param-name>
+		  <param-value>org.glassfish.jersey.jackson.JacksonFeature</param-value>
+		</init-param>
 	
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -30,6 +35,6 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>ObjectifyFilter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/services/*</url-pattern>
 	</filter-mapping>
 </web-app>
