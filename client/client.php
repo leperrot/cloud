@@ -41,7 +41,7 @@ function getApprovals($client){
 	);
 }
 
-getAccounts($client);
-getApprovals($client);
+if($_GET['do'] === "accounts")
+	getAccounts($client);
 
 ?>

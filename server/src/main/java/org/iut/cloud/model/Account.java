@@ -12,12 +12,14 @@ public class Account implements Serializable{
 	private String nom;
 	private String prenom;
 	private String risk;
+	private float amount;
 	
-	public Account(Long account, String nom, String prenom, String risk) {
+	public Account(Long account, String nom, String prenom, String risk, float amount) {
 		this.account = account;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.risk = risk;
+		this.amount = amount;
 	}
 	
 	public Account() {}
@@ -45,5 +47,11 @@ public class Account implements Serializable{
 	}
 	public void setRisk(String risk) {
 		this.risk = risk;
+	}
+	public float getAmount() {
+		return amount;
+	}
+	public void setAmount(float amount) {
+		this.amount = amount;
 	}
 }

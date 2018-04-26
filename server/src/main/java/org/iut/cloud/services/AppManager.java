@@ -32,6 +32,33 @@ public class AppManager {
 		return Response.ok().entity(approvals).build();
 	}
 	
+	@Path("/account/{id}")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getApprovalsForAccount(@PathParam("id") Long account) {
+		
+		List<Approval> approvals = ofy().load().type(Approval.class).filter("account", account).list();
+		
+		if(approvals == null || approvals.isEmpty())
+			return Response.status(404).build();
+		
+		return Response.ok().entity(approvals).build();
+		
+	}
+	
+	@Path("/{id}")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getApproval(@PathParam("id") Long id) {
+		
+		Approval approval = ofy().load().type(Approval.class).id(id).now();
+		
+		if(approval == null)
+			return Response.status(404).build();
+		
+		return Response.ok().entity(approval).build();
+	}
+	
 	@Path("/new")
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
@@ -51,24 +78,6 @@ public class AppManager {
 		ofy().delete().type(Approval.class).id(id);
 		
 		return Response.ok().build();
-	}
-	
-	@Path("/{id}/{response}")
-	@PUT
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response respond(@PathParam("id") Long id, @PathParam("response") String response) {
-		
-		Approval approval = ofy().load().type(Approval.class).id(id).now();
-		
-		if(approval == null)
-			return Response.status(404).build();
-		
-		approval.setResponse(response);
-		
-		ofy().save().entity(approval);
-		
-		return Response.ok().entity(approval).build();
 	}
 	
 }
