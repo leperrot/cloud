@@ -41,7 +41,14 @@ function getApprovals($client){
 	);
 }
 
-if($_GET['do'] === "accounts")
-	getAccounts($client);
+switch($_GET['do']){
+	case "accounts":
+		getAccounts($client);
+		break;
+	case "approvals":
+		getApprovals($client);
+	default:
+		break;
+}
 
 ?>
