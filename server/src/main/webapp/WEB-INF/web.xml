@@ -38,7 +38,7 @@
 		<url-pattern>/services/*</url-pattern>
 	</filter-mapping>
 	
-	<security-constraint>
+	<!-- <security-constraint>
         <web-resource-collection>
             <web-resource-name>login</web-resource-name>
             <url-pattern>/services/*</url-pattern>
@@ -46,5 +46,5 @@
         <auth-constraint>
             <role-name>*</role-name>
         </auth-constraint>
-    </security-constraint>
+    </security-constraint> -->
 </web-app>
