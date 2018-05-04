@@ -41,14 +41,16 @@ function getApprovals($client){
 	);
 }
 
-switch($_GET['do']){
-	case "accounts":
-		getAccounts($client);
-		break;
-	case "approvals":
-		getApprovals($client);
-	default:
-		break;
+if(isset($_GET['do'])){
+	switch($_GET['do']){
+		case "accounts":
+			getAccounts($client);
+			break;
+		case "approvals":
+			getApprovals($client);
+		default:
+			break;
+	}
 }
 
 ?>
