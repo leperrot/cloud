@@ -22,7 +22,7 @@ import org.iut.model.Loan;
 @Path("/loan")
 public class LoanApproval {
 
-	private static final String URI = "https://newproject-161616.appspot.com/services/";
+	private static final String URI = "http://localhost:8080/services";
 	private static final Logger LOG = Logger.getLogger(LoanApproval.class.getName());
 	
 	@POST
