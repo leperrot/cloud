@@ -1,0 +1,5 @@
+Services : 
+	GAE :
+		https://inf63app3.appspot.com/services/
+	HEROKU:
+		https://loan-approval.herokuapp.com/
