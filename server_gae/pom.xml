@@ -1,0 +1,128 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>server_gae</groupId>
+  <artifactId>server_gae</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>server_gae</name>
+  
+  <properties>
+    <appengine.maven.plugin.version>1.3.1</appengine.maven.plugin.version>
+    <appengine.api.sdk.version>1.9.63</appengine.api.sdk.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+</properties>
+  
+  <dependencies>
+	<!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
+	<dependency>
+	    <groupId>javax.ws.rs</groupId>
+	    <artifactId>javax.ws.rs-api</artifactId>
+	    <version>2.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.bitbucket.b_c/jose4j -->
+	<dependency>
+	    <groupId>org.bitbucket.b_c</groupId>
+	    <artifactId>jose4j</artifactId>
+	    <version>0.6.3</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.containers/jersey-container-servlet-core -->
+	<dependency>
+	    <groupId>org.glassfish.jersey.containers</groupId>
+	    <artifactId>jersey-container-servlet-core</artifactId>
+	    <version>2.27</version>
+	</dependency>
+	<dependency>
+    	<groupId>org.glassfish.jersey.containers</groupId>
+    	<artifactId>jersey-container-servlet</artifactId>
+    	<version>2.27</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.1.0</version>
+	    <scope>provided</scope>
+	</dependency>
+	<dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>javax.servlet.jsp-api</artifactId>
+      <version>2.3.1</version>
+      <scope>provided</scope>
+</dependency>
+	<dependency>
+	      <groupId>jstl</groupId>
+	      <artifactId>jstl</artifactId>
+	      <version>1.2</version>
+	</dependency>
+	<dependency>
+	  	<groupId>org.glassfish.jersey.core</groupId>
+	  	<artifactId>jersey-client</artifactId>
+	  	<version>2.26</version>
+	</dependency>
+	  <dependency>
+	  	<groupId>com.google.cloud</groupId>
+	  	<artifactId>google-cloud-datastore</artifactId>
+	  	<version>1.14.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.googlecode.objectify/objectify -->
+	<dependency>
+	    <groupId>com.googlecode.objectify</groupId>
+	    <artifactId>objectify</artifactId>
+	    <version>5.1.22</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+	<dependency>
+	    <groupId>com.google.guava</groupId>
+	    <artifactId>guava</artifactId>
+	    <version>25.1-jre</version>
+	</dependency>
+	<dependency>
+    	<groupId>org.glassfish.jersey.media</groupId>
+    	<artifactId>jersey-media-json-jackson</artifactId>
+    	<version>2.26</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.google.appengine/appengine-api-1.0-sdk -->
+	<dependency>
+	    <groupId>com.google.appengine</groupId>
+	    <artifactId>appengine-api-1.0-sdk</artifactId>
+	    <version>1.9.63</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+<dependency>
+    <groupId>javax.activation</groupId>
+    <artifactId>activation</artifactId>
+    <version>1.1.1</version>
+</dependency>
+  </dependencies>
+  
+  <build>
+    <!-- for hot reload of the web application-->
+    <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <version>2.3</version>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <goals>
+              <goal>display-dependency-updates</goal>
+              <goal>display-plugin-updates</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>com.google.cloud.tools</groupId>
+        <artifactId>appengine-maven-plugin</artifactId>
+        <version>${appengine.maven.plugin.version}</version>
+      </plugin>
+    </plugins>
+</build>
+</project>
