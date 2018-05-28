@@ -1,5 +1,28 @@
-Services : 
-	GAE :
-		https://inf63app3.appspot.com/services/
-	HEROKU:
-		https://loan-approval.herokuapp.com/
+GAE : 
+	GIT : https://github.com/leperrot/cloud.git
+	LIEN : https://inf63app3.appspot.com/services/
+	SERVICES : 
+		AccManager
+		AppManager
+		CheckAccount
+
+Réalisé par Léandre PERROT
+
+Base de données assuré par le Google Datastore avec Objectify
+
+Maven utilisé mais lib non exportés et ajoutés à la main dans le WEB-INF/lib
+
+HEROKU: 
+	GIT : https://github.com/leperrot/loan-approval.git
+	LIEN : https://loan-approval.herokuapp.com/
+	SERVICES : 
+		LoanApproval
+
+Réalisé par Alexis ROBERT
+
+Client Guzzle :
+	GIT : https://github.com/leperrot/cloud.git
+
+Réalisé par Alexis ROBERT Léandre PERROT
+
+
